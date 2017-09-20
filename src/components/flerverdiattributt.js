@@ -11,15 +11,15 @@ class FlerVerdiAttributt extends Component {
     let verdi = this.props.verdi;
     return(
       <div className="FlerVerdiAttributt">
-        <div>
+        <dt>
           {verdi.id} {verdi.navn} <span className="FlerVerdiAttributtVerdiStatistikk">{this.state.statistikk.antall}</span>
-        </div>
+      </dt>
         {verdi.objektliste_dato &&
-          <div>
+          <dd className="Objektlistedato">
             Objektlistedato: {verdi.objektliste_dato}
-         </div>}
+         </dd>}
          {verdi.beskrivelse &&
-           <div className="FlerVerdiAttributtBeskrivelse">{verdi.beskrivelse}</div>
+           <dd className="FlerVerdiAttributtBeskrivelse">{verdi.beskrivelse}</dd>
          }
       </div>
     );

@@ -1,4 +1,4 @@
-adimport React, { Component } from 'react';
+import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
 import ObjektType from './objekttype.js'
 
@@ -27,8 +27,7 @@ class ObjektTypeListe extends Component {
     return (
       <div>
       <div className="ObjektTypeListe">
-      <h1>{dill}</h1>
-      <input type="text" value={this.state.value} onBlur={this.sokEndret.bind(this)} />
+      <h1>{dill}</h1>      
         <ul>
         {listItems }
         </ul>

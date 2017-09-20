@@ -51,17 +51,9 @@
   margin-right: 20%
 }
 
-.ObjektType dt {
-  font-weight: bold;
-  color: #272727;
-  float:left;
-  margin: 0;
+.FlerverdiAttributtListe {
+  margin-left: 5em;
 }
-
-.ObjektType dd {
-  display: block;
-}
-
 
 .ObjektType [class*="Statistikk"] {
   color: orange;

@@ -12,7 +12,7 @@ class Egenskap extends Component {
     let e = this.props.egenskap;
     let listItems = [];
     if (e.hasOwnProperty('tillatte_verdier')){
-       listItems = e.tillatte_verdier.map((d) =><li key={d.id}><FlerVerdiAttributt ftid={this.props.ftid} etid={e.id} verdi={d}/></li>);
+       listItems = e.tillatte_verdier.map((d) => <FlerVerdiAttributt  key={d.id} ftid={this.props.ftid} etid={e.id} verdi={d}/>);
        /* "standardverdi" : 0.0,
           "min_anbefalt" : 0.0,
           "maks_anbefalt" : 8.0,
@@ -39,17 +39,17 @@ class Egenskap extends Component {
           </dd>}
         <dd className="EgenskapsDatatype">
           {e.datatype_tekst} {e.enhet && '('+e.enhet.navn+')'}
-          {e.min_anbefalt && <span className="MinAnbefalt">'min_anbefalt: '+{e.min_anbefalt}</span>}
-          {e.maks_anbefalt && <span className="MaksAnbefalt">'maks_anbefalt: '+{e.maks_anbefalt}</span>}
-          {e.min && <span className="Min">'Min: '+{e.min}</span>}
-          {e.maks && <span className="Maks">'Maks: '+{e.maks}</span>}
-          {e.desimaler && <span className="Desimaler">'Desimaler: '+{e.desimaler}</span>}
-          {e.desimaler && e.desimaler > 0 && <span className="Desimaler">'Desimaler: '+{e.desimaler}</span>}
+          {e.min_anbefalt && <span className="MinAnbefalt">, Min Anbefalt: {e.min_anbefalt}</span>}
+          {e.maks_anbefalt && <span className="MaksAnbefalt">, Maks Anbefalt: {e.maks_anbefalt}</span>}
+          {e.min && <span className="Min">, Min: {e.min}</span>}
+          {e.maks && <span className="Maks">, Maks: {e.maks}</span>}
+          {e.feltlengde && <span className="Feltlengde">, Feltlengde: {e.feltlengde}</span>}
+          {e.desimaler && <span className="Desimaler">, Desimaler: {e.desimaler}</span>}
         </dd>
 
         {listItems &&
           <div className="FlerverdiAttributtListe">
-            <ul>{listItems}</ul>
+            {listItems}
           </div>
         }
       </div>
