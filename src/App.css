@@ -1,0 +1,76 @@
+.App {
+
+}
+
+.dakat {
+  display: flex;
+  font: Verdana, Geneva, sans-serif
+}
+
+.App-logo {
+  animation: App-logo-spin infinite 20s linear;
+  height: 80px;
+}
+
+
+.App-header {
+  background-color: #222;
+  height: 150px;
+  padding: 20px;
+  color: white;
+  text-align: center;
+}
+
+.App-intro {
+  font-size: large;
+}
+
+.ObjektTypeListe {
+  font-size: small;
+  float: left;
+  width: 20%;
+  border: 1px solid #000;
+  margin: 1em;
+  padding: 1px;
+}
+
+.ObjektTypeListe ul{
+  list-style-type: none;
+}
+
+.ObjektTypeListe li:hover{
+  background: orange;
+  display: block;
+}
+
+.ObjektType {
+  font-size: small;
+  word-wrap: normal;
+  float: right;
+  width: 50%;
+  margin-right: 20%
+}
+
+.ObjektType dt {
+  font-weight: bold;
+  color: #272727;
+  float:left;
+  margin: 0;
+}
+
+.ObjektType dd {
+  display: block;
+}
+
+
+.ObjektType [class*="Statistikk"] {
+  color: orange;
+  font-weight: bolder;
+  font-style: italic;
+  float:right;
+}
+
+@keyframes App-logo-spin {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
