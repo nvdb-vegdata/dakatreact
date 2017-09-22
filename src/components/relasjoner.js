@@ -25,18 +25,18 @@ class ObjektTypeRelasjoner extends Component {
     }
 
     return (
-      <div className="ObjektTypeRelasjoner">
-        <h3>Relasjoner:</h3>
-        <p><b>Foreldre</b></p>
+      <section className="ObjektType__Relasjoner">
+        <h2>Relasjoner:</h2>
+        <h3>Foreldre</h3>
         <ul>
         {foreldre}
         </ul>
-        <p><b>Barn</b></p>
+        <h3>Barn</h3>
         <ul>
         {barn}
         </ul>
 
-      </div>
+      </section>
     );
   }
 

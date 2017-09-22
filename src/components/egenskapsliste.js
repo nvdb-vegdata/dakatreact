@@ -8,12 +8,12 @@ class EgenskapsListe extends Component {
     let listItems = this.props.egenskaper.map((d) => <Egenskap key={d.id} ftid={this.props.ftid} egenskap={d}/>);
 
     return(
-      <div className="EgenskapsListe">
-        <h3>Egenskaper</h3>
-        <dl>
+      <section className="EgenskapsListe">
+        <h2>Egenskaper</h2>
+        <dl className="EgenskapsListe__Egenskaper">
           {listItems}
         </dl>
-      </div>
+      </section>
     );
   }
 

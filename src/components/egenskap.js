@@ -24,27 +24,27 @@ class Egenskap extends Component {
     }
 
     return(
-      <div className="Egenskap">
-        <dt className="EgenskapsTittel">{e.id}: {e.navn} {e.viktighet > 0 && e.viktighet_tekst}</dt>
-        <dd className="EgenskapsStatistikk">{this.state.statistikk.antall}</dd>
-        <dd className="EgenskapsBeskrivelse">{e.beskrivelse}</dd>
-        {e.veiledning && <dd className="EgenskapsVeiledning">{e.veiledning}</dd>}
+      <section className="EgenskapsListe__Egenskaper Egenskap">
+        <dt className="Egenskap__Tittel" data-viktighet={e.viktighet}>{e.id}: {e.navn} {e.hasOwnProperty('viktighet') && e.viktighet_tekst}</dt>
+        <dd className="Egenskap__Tittel-Statistikk">{this.state.statistikk.antall}</dd>
+        <dd className="Egenskap__EgenskapsBeskrivelse">{e.beskrivelse}</dd>
+        {e.veiledning && <dd className="Egenskap__EgenskapsBeskrivelse-Veiledning">{e.veiledning}</dd>}
         {e.objektliste_dato &&
-          <dd className="ObjektListeDato">
+          <dd className="Egenskap__EgenskapsBeskrivelse-Dato">
             Objektlistedato: {e.objektliste_dato}
          </dd>}
          {e.sosinvdbnavn &&
-           <dd className="SOSI-NVDB-Navn">
+           <dd className="Egenskap__EgenskapsBeskrivelse-Sosi">
              SOSI NVDB Navn: {e.sosinvdbnavn}
           </dd>}
-        <dd className="EgenskapsDatatype">
+        <dd className="Egenskap__Datatype">
           {e.datatype_tekst} {e.enhet && '('+e.enhet.navn+')'}
-          {e.min_anbefalt && <span className="MinAnbefalt">, Min Anbefalt: {e.min_anbefalt}</span>}
-          {e.maks_anbefalt && <span className="MaksAnbefalt">, Maks Anbefalt: {e.maks_anbefalt}</span>}
-          {e.min && <span className="Min">, Min: {e.min}</span>}
-          {e.maks && <span className="Maks">, Maks: {e.maks}</span>}
-          {e.feltlengde && <span className="Feltlengde">, Feltlengde: {e.feltlengde}</span>}
-          {e.desimaler && <span className="Desimaler">, Desimaler: {e.desimaler}</span>}
+          {e.hasOwnProperty('min_anbefalt') && <span className="Egenskap__Datatype-MinAnbefalt">, Min Anbefalt: {e.min_anbefalt}</span>}
+          {e.hasOwnProperty('maks_anbefalt') && <span className="Egenskap__Datatype-MaksAnbefalt">, Maks Anbefalt: {e.maks_anbefalt}</span>}
+          {e.hasOwnProperty('min') && <span className="Egenskap__Datatype-Min">, Min: {e.min}</span>}
+          {e.hasOwnProperty('maks') && <span className="Egenskap__Datatype-Maks">, Maks: {e.maks}</span>}
+          {e.hasOwnProperty('feltlengde') && <span className="Egenskap__Datatype-Feltlengde">, Feltlengde: {e.feltlengde}</span>}
+          {e.hasOwnProperty('desimaler') && <span className="Egenskap__Datatype-Desimaler">, Desimaler: {e.desimaler}</span>}
         </dd>
 
         {listItems &&
@@ -52,7 +52,7 @@ class Egenskap extends Component {
             {listItems}
           </div>
         }
-      </div>
+      </section>
     );
   }
 

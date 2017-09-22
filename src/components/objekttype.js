@@ -30,15 +30,15 @@ class ObjektType extends Component {
     return (
       <div>
           {this.state.objekttypedef &&
-            <div className="ObjektType">
-              <h1>{header}</h1>
+            <article className="ObjektType">
+              <h1 className="ObjektType__Overskrift">{header}</h1>
               <ObjektTypeInfo info={info}/>
-              {header && <EgenskapsListe ftid={this.state.objekttypedef.id} egenskaper={this.state.objekttypedef.egenskapstyper}/>}
+              <EgenskapsListe ftid={this.state.objekttypedef.id} egenskaper={this.state.objekttypedef.egenskapstyper}/>
               <ObjektTypeRelasjoner relasjoner={relasjoner}/>
               <StyringsParametre sparams={styringsparametre}/>
-            </div>
+            </article>
           }
-      </div>
+    </div>
     );
   }
 

@@ -19,21 +19,28 @@ class ObjektTypeInfo extends Component {
     let posisjon = "/@600000,7210461,3";
     let url = vegkarturl + filter + posisjon;
     return (
-      <div className="ObjektTypeInfo">
-        <h3>Generelt:</h3>
-        <dl>
-          <dt>Antall objekter i NVDB:</dt>
-          <dd>
-            <span className="ObjektTypeStatistikk">{this.state.statistikk.antall}</span>
-            <a target="_blank" href={url}>Se forekomster i vegkart.</a>
+      <section className="ObjektType__Definisjoner">
+        <h2>Generelt:</h2>
+        <dl className="ObjektType__Definisjoner ObjekttypeDefinisjon">
+          <dt className="ObjekttypeDefinisjon__Antall-Tittel">Antall objekter i NVDB:</dt>
+          <dd className="ObjekttypeDefinisjon__Antall-Statistikk">
+            {this.state.statistikk.antall}
           </dd>
-          <dt>Beskrivelse:</dt><dd>{this.props.info.beskrivelse}</dd>
-          <dt>Vegnettstilknytning:</dt><dd>{this.props.info.stedfesting}</dd>
-          {this.props.info.veiledning && <div className="ObjektTypeVeiledning">
-            <dt>Veiledning:</dt><dd>{this.props.info.veiledning}</dd>
-          </div>}
+          <dd className="ObjekttypeDefinisjon__Vegkart">
+            <a className="ObjekttypeDefinisjon__Vegkart-Lenke" target="_blank" href={url}>Se forekomster i vegkart.</a>
+          </dd>
+          <dt className="ObjekttypeDefinisjon__Beskrivelse-Tittel">Beskrivelse:</dt>
+            <dd className="ObjekttypeDefinisjon__Beskrivelse-Verdi">{this.props.info.beskrivelse}</dd>
+          <dt className="ObjekttypeDefinisjon__Vegnettstilknytning-Tittel">Vegnettstilknytning:</dt>
+            <dd className="ObjekttypeDefinisjon__Vegnettstilknytning-Verdi">{this.props.info.stedfesting}</dd>
+          {this.props.info.veiledning &&
+            <div>
+              <dt className="ObjekttypeDefinisjon__Veiledning-Tittel">Veiledning:</dt>
+              <dd className="ObjekttypeDefinisjon__Veiledning-Verdi">{this.props.info.veiledning}</dd>
+            </div>
+          }
         </dl>
-      </div>
+      </section>
     );
   }
 

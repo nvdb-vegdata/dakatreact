@@ -15,12 +15,12 @@ class StyringsParametre extends Component {
         return <li key={k}>{k}: {verdi}</li>;
       })
     return (
-      <div className="StyringsParametre">
-        <h3>StyringsParametre:</h3>
+      <section className="Objekttype__Styringsparametre">
+        <h2>StyringsParametre:</h2>
         <ul>
           {listItems}
         </ul>
-      </div>
+      </section>
     );
   }
 

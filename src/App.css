@@ -51,6 +51,15 @@
   margin-right: 20%
 }
 
+.EgenskapsTittel[data-viktighet ="2"]{
+  font-weight: bold;
+  color:orange;
+}
+
+.EgenskapsDatatype {
+  font-family: monospace;
+}
+
 .FlerverdiAttributtListe {
   margin-left: 5em;
 }
@@ -61,6 +70,16 @@
   font-style: italic;
   float:right;
 }
+
+.ObjektType [class*="Beskrivelse"] {
+  color: grey;
+  font-style: italic;
+}
+.ObjektType [class*="Veiledning"] {
+  color: grey;
+  font-style: italic;
+}
+
 
 @keyframes App-logo-spin {
   from { transform: rotate(0deg); }
