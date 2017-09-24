@@ -22,13 +22,12 @@ class ObjektTypeListe extends Component {
 
   render() {
     let filter = new RegExp(this.state.filter, 'gi');
-    const listItems = this.state.objekttypeliste.map((d) => {
-        console.log(filter);
-        let objekttypenavn = d.navn;
+    const listItems = this.state.objekttypeliste.filter((d) => {
+      let objekttypenavn = d.navn;
+      return objekttypenavn.match(filter);
+    }).map((d) => {
         let url = '/dakatr/'+d.id;
-        if (objekttypenavn.match(filter)) {
-          return <li key={d.id}><Link  to={url}>{d.id}: {d.navn}</Link></li>;
-        }
+        return <li key={d.id}><Link  to={url}>{d.id}: {d.navn}</Link></li>;
       })
 
       let dill = "Velg objekttype"

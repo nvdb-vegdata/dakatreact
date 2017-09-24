@@ -119,7 +119,13 @@ h1, h2, h3 {
   width: 350px;
 }
 
-
+.StyringsParameter__Tittel {
+  float:left;
+  font-weight: bold;
+}
+.StyringsParameter__Verdi {
+  margin-left: 150px;
+}
 
 .ObjektType__Relasjoner {
   margin: 1rem;

@@ -12,14 +12,14 @@ class StyringsParametre extends Component {
         let verdi = this.props.sparams[k];
         if (verdi === true) verdi="Ja";
         if (verdi === false) verdi="Nei";
-        return <li key={k}>{k}: {verdi}</li>;
+        return <div><dt className="StyringsParameter__Tittel" key={k}>{k}</dt><dl className="StyringsParameter__Verdi">{verdi}</dl></div>;
       })
     return (
       <section className="ObjektType__Styringsparametre">
         <h2>StyringsParametre:</h2>
-        <ul>
+        <dl>
           {listItems}
-        </ul>
+        </dl>
       </section>
     );
   }
