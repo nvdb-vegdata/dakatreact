@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
-import ObjektType from './objekttype.js'
+import ObjektType from './objekttype.js';
 
 class ObjektTypeListe extends Component {
 
@@ -8,15 +8,27 @@ class ObjektTypeListe extends Component {
       super(props);
       this.state = {
         objekttypeliste: [],
+        filter: ''
       };
+
+      this.handleChange = this.handleChange.bind(this);
     }
 
+
+    handleChange(event) {
+      this.setState({filter: event.target.value});
+    }
+
+
   render() {
+    let filter = new RegExp(this.state.filter, 'gi');
     const listItems = this.state.objekttypeliste.map((d) => {
-        let filter = new RegExp(this.state.soktekst, 'gi');
+        console.log(filter);
         let objekttypenavn = d.navn;
         let url = '/dakatr/'+d.id;
-        return <li key={d.id}><Link  to={url}>{d.id}: {d.navn}</Link></li>;
+        if (objekttypenavn.match(filter)) {
+          return <li key={d.id}><Link  to={url}>{d.id}: {d.navn}</Link></li>;
+        }
       })
 
       let dill = "Velg objekttype"
@@ -28,6 +40,9 @@ class ObjektTypeListe extends Component {
       <div className="ApplikasjonsOmrade">
       <div className="ObjektTypeListe">
       <h1>{dill}</h1>
+        <div>
+          <input type="text" value={this.state.filter} onChange={this.handleChange} />
+        </div>
         <ul>
         {listItems }
         </ul>
@@ -38,6 +53,10 @@ class ObjektTypeListe extends Component {
       }
       </div>
     );
+  }
+
+  filter(filter) {
+    console.log(filter);
   }
 
   componentDidMount() {
