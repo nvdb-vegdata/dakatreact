@@ -23,7 +23,7 @@ class ObjektTypeListe extends Component {
   render() {
     let filter = new RegExp(this.state.filter, 'gi');
     const listItems = this.state.objekttypeliste.filter((d) => {
-      let objekttypenavn = d.navn;
+      let objekttypenavn = d.id+d.navn;
       return objekttypenavn.match(filter);
     }).map((d) => {
         let url = '/dakatr/'+d.id;
