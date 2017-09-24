@@ -15,7 +15,7 @@ class StyringsParametre extends Component {
         return <li key={k}>{k}: {verdi}</li>;
       })
     return (
-      <section className="Objekttype__Styringsparametre">
+      <section className="ObjektType__Styringsparametre">
         <h2>StyringsParametre:</h2>
         <ul>
           {listItems}

@@ -22,21 +22,21 @@ class ObjektTypeInfo extends Component {
       <section className="ObjektType__Definisjoner">
         <h2>Generelt:</h2>
         <dl className="ObjektType__Definisjoner ObjekttypeDefinisjon">
-          <dt className="ObjekttypeDefinisjon__Antall-Tittel">Antall objekter i NVDB:</dt>
+          <dt className="ObjekttypeDefinisjon-Tittel">Antall objekter i NVDB:</dt>
           <dd className="ObjekttypeDefinisjon__Antall-Statistikk">
             {this.state.statistikk.antall}
           </dd>
-          <dd className="ObjekttypeDefinisjon__Vegkart">
-            <a className="ObjekttypeDefinisjon__Vegkart-Lenke" target="_blank" href={url}>Se forekomster i vegkart.</a>
+          <dd className="ObjekttypeDefinisjon-Verdi">
+            <a target="_blank" href={url}>Se forekomster i vegkart.</a>
           </dd>
-          <dt className="ObjekttypeDefinisjon__Beskrivelse-Tittel">Beskrivelse:</dt>
-            <dd className="ObjekttypeDefinisjon__Beskrivelse-Verdi">{this.props.info.beskrivelse}</dd>
-          <dt className="ObjekttypeDefinisjon__Vegnettstilknytning-Tittel">Vegnettstilknytning:</dt>
-            <dd className="ObjekttypeDefinisjon__Vegnettstilknytning-Verdi">{this.props.info.stedfesting}</dd>
+          <dt className="ObjekttypeDefinisjon-Tittel">Beskrivelse:</dt>
+            <dd className="ObjekttypeDefinisjon-Verdi">{this.props.info.beskrivelse}</dd>
+          <dt className="ObjekttypeDefinisjon-Tittel">Vegnettstilknytning:</dt>
+            <dd className="ObjekttypeDefinisjon-Verdi">{this.props.info.stedfesting}</dd>
           {this.props.info.veiledning &&
             <div>
-              <dt className="ObjekttypeDefinisjon__Veiledning-Tittel">Veiledning:</dt>
-              <dd className="ObjekttypeDefinisjon__Veiledning-Verdi">{this.props.info.veiledning}</dd>
+              <dt className="ObjekttypeDefinisjon-Tittel">Veiledning:</dt>
+              <dd className="ObjekttypeDefinisjon-Verdi">{this.props.info.veiledning}</dd>
             </div>
           }
         </dl>

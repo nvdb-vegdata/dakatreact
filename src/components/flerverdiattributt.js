@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { isWebUri } from 'valid-url';
 
 class FlerVerdiAttributt extends Component {
 
@@ -9,19 +10,31 @@ class FlerVerdiAttributt extends Component {
   render(){
 
     let verdi = this.props.verdi;
+    let verdinavn = verdi.navn;
+    let verdibeskrivelse = "";
+    if (verdi.beskrivelse) {
+      if (isWebUri(verdi.beskrivelse)) {
+        verdinavn=<a target="_blank" href={verdi.beskrivelse}>{verdi.navn}</a>;
+      } else {
+        verdibeskrivelse = verdi.beskrivelse;
+      }
+    }
     return(
-      <section className="Egenskap__Verdiliste">
-        <dt>
-          {verdi.id} {verdi.navn}
-          <span className="Egenskap__Verdiliste-Statistikk"> {this.state.statistikk.antall}</span>
-          {verdi.objektliste_dato && <span className="Egenskap__Verdiliste--Dato"> Objektlistedato: {verdi.objektliste_dato}</span>}
-      </dt>
-         {verdi.beskrivelse &&
-           <dd className="Egenskap__Verdiliste-Beskrivelse">{verdi.beskrivelse}</dd>
+      <div>
+        <dt className="Egenskap__Verdiliste-Tittel">
+          {verdi.id}
+        </dt>
+        <dd className="Egenskap__Verdiliste-Verdi">{verdinavn}</dd>
+          <dd className="Egenskap__Verdiliste-Verdi-Statistikk">{this.state.statistikk.antall}</dd>
+          {verdi.objektliste_dato && <dd className="Egenskap__Verdiliste-Verdi"> Objektlistedato: {verdi.objektliste_dato}</dd>}
+         {verdibeskrivelse &&
+           <dd className="Egenskap__Verdiliste-Verdi Beskrivelse">{verdibeskrivelse}</dd>
          }
-      </section>
+       </div>
     );
   }
+
+
 
   hentAttributtverdiStatistikk(ftid, etid, etval) {
     var that = this;

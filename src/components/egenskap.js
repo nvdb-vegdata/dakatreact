@@ -25,32 +25,35 @@ class Egenskap extends Component {
 
     return(
       <section className="EgenskapsListe__Egenskaper Egenskap">
-        <dt className="Egenskap__Tittel" data-viktighet={e.viktighet}>{e.id}: {e.navn} {e.hasOwnProperty('viktighet') && e.viktighet_tekst}</dt>
-        <dd className="Egenskap__Tittel-Statistikk">{this.state.statistikk.antall}</dd>
-        <dd className="Egenskap__EgenskapsBeskrivelse">{e.beskrivelse}</dd>
-        {e.veiledning && <dd className="Egenskap__EgenskapsBeskrivelse-Veiledning">{e.veiledning}</dd>}
+        <dt className="Egenskap__Tittel">{e.id}</dt>
+        <dt className="Egenskap__Tittel">{e.navn}</dt>
+        {e.hasOwnProperty('viktighet') && <dt className="Egenskap__Tittel">{e.viktighet_tekst}</dt>}
+        <dd className="Egenskap__Verdi-Statistikk">{this.state.statistikk.antall}</dd>
+        <dd className="Egenskap__Verdi">{e.beskrivelse}</dd>
+        {e.veiledning && <dd className="Egenskap__Verdi Egenskap__Verdi-Veiledning">{e.veiledning}</dd>}
         {e.objektliste_dato &&
-          <dd className="Egenskap__EgenskapsBeskrivelse-Dato">
+          <dd className="Egenskap__Verdi">
             Objektlistedato: {e.objektliste_dato}
          </dd>}
          {e.sosinvdbnavn &&
-           <dd className="Egenskap__EgenskapsBeskrivelse-Sosi">
+           <dd className="Egenskap__Verdi">
              SOSI NVDB Navn: {e.sosinvdbnavn}
           </dd>}
-        <dd className="Egenskap__Datatype">
-          {e.datatype_tekst} {e.enhet && '('+e.enhet.navn+')'}
-          {e.hasOwnProperty('min_anbefalt') && <span className="Egenskap__Datatype-MinAnbefalt">, Min Anbefalt: {e.min_anbefalt}</span>}
-          {e.hasOwnProperty('maks_anbefalt') && <span className="Egenskap__Datatype-MaksAnbefalt">, Maks Anbefalt: {e.maks_anbefalt}</span>}
-          {e.hasOwnProperty('min') && <span className="Egenskap__Datatype-Min">, Min: {e.min}</span>}
-          {e.hasOwnProperty('maks') && <span className="Egenskap__Datatype-Maks">, Maks: {e.maks}</span>}
-          {e.hasOwnProperty('feltlengde') && <span className="Egenskap__Datatype-Feltlengde">, Feltlengde: {e.feltlengde}</span>}
-          {e.hasOwnProperty('desimaler') && <span className="Egenskap__Datatype-Desimaler">, Desimaler: {e.desimaler}</span>}
+        <dd className="Egenskap__Verdi Egenskap__Verdi-Datatype">
+          {e.datatype_tekst}: {e.enhet && '('+e.enhet.navn+')'}
+          {e.hasOwnProperty('min_anbefalt') && <span className="Egenskap__Verdi-Datatype Egenskap__Datatype-MinAnbefalt">, Min Anbefalt: {e.min_anbefalt}</span>}
+          {e.hasOwnProperty('maks_anbefalt') && <span className="Egenskap__Verdi-Datatype Egenskap__Datatype-MaksAnbefalt">, Maks Anbefalt: {e.maks_anbefalt}</span>}
+          {e.hasOwnProperty('min') && <span className="Egenskap__Verdi-Datatype Egenskap__Datatype-Min">, Min: {e.min}</span>}
+          {e.hasOwnProperty('maks') && <span className="Egenskap__Verdi-Datatype Egenskap__Datatype-Maks">, Maks: {e.maks}</span>}
+          {e.hasOwnProperty('feltlengde') && <span className="Egenskap__Verdi-Datatype Egenskap__Datatype-Feltlengde">, Feltlengde: {e.feltlengde}</span>}
+          {e.hasOwnProperty('desimaler') && <span className="Egenskap__Verdi-Datatype Egenskap__Datatype-Desimaler">, Desimaler: {e.desimaler}</span>}
         </dd>
-
         {listItems &&
-          <div className="FlerverdiAttributtListe">
-            {listItems}
-          </div>
+          <section className="FlerverdiAttributtListe">
+            <dl>
+              {listItems}
+            </dl>
+          </section>
         }
       </section>
     );

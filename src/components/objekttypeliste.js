@@ -25,9 +25,9 @@ class ObjektTypeListe extends Component {
       }
 
     return (
-      <div>
+      <div className="ApplikasjonsOmrade">
       <div className="ObjektTypeListe">
-      <h1>{dill}</h1>      
+      <h1>{dill}</h1>
         <ul>
         {listItems }
         </ul>

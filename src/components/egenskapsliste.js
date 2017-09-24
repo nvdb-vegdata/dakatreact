@@ -8,7 +8,7 @@ class EgenskapsListe extends Component {
     let listItems = this.props.egenskaper.map((d) => <Egenskap key={d.id} ftid={this.props.ftid} egenskap={d}/>);
 
     return(
-      <section className="EgenskapsListe">
+      <section className="ObjektType_EgenskapsListe">
         <h2>Egenskaper</h2>
         <dl className="EgenskapsListe__Egenskaper">
           {listItems}

@@ -1,37 +1,46 @@
+@import url(https://fonts.googleapis.com/css?family=Yanone+Kaffeesatz);
+@import url(https://fonts.googleapis.com/css?family=Droid+Serif:400,700,400italic);
+@import url(https://fonts.googleapis.com/css?family=Ubuntu+Mono:400,700,400italic);
+
+body {
+  font-family: 'Yanone Kaffeesatz';
+
+}
+h1, h2, h3 {
+  font-family: 'Yanone Kaffeesatz';
+  font-weight: normal;
+  font-size: 3.2rem;
+}
+
 .App {
-
-}
-
-.dakat {
   display: flex;
-  font: Verdana, Geneva, sans-serif
+  flex-flow: row wrap;
+  background: #BDBDBD;
 }
 
-.App-logo {
-  animation: App-logo-spin infinite 20s linear;
-  height: 80px;
+.HeaderBar{
+  background: #06000a;
+  flex: 1 100%;
 }
 
-
-.App-header {
-  background-color: #222;
-  height: 150px;
-  padding: 20px;
-  color: white;
+.ApplikasjonsOverskrift {
+  display: block;
+  color: #c43235;
   text-align: center;
 }
 
-.App-intro {
-  font-size: large;
+.ApplikasjonsOmrade {
+  width: 100%;
 }
 
 .ObjektTypeListe {
-  font-size: small;
+  flex: 0 0;
   float: left;
-  width: 20%;
+  width: 20rem;
   border: 1px solid #000;
-  margin: 1em;
-  padding: 1px;
+  margin: 1rem;
+  padding: .8rem;
+  background: #CFD8DC;
 }
 
 .ObjektTypeListe ul{
@@ -39,22 +48,92 @@
 }
 
 .ObjektTypeListe li:hover{
-  background: orange;
+  background: #963019;
   display: block;
 }
 
 .ObjektType {
-  font-size: small;
+  display: flex;
+  flex-basis: auto;
+  flex-direction: column;
   word-wrap: normal;
-  float: right;
-  width: 50%;
-  margin-right: 20%
+  width: 50rem;
+  border: 1px solid #000;
+  margin: 1rem;
+  padding: .8rem;
+  background: #CFD8DC;
 }
 
-.EgenskapsTittel[data-viktighet ="2"]{
-  font-weight: bold;
-  color:orange;
+.ObjektTypeOverskrift {
+  display: flex;
 }
+
+.ObjektType__Definisjoner {
+  margin: 1rem;
+  padding: .8rem;
+}
+
+.ObjekttypeDefinisjon-Tittel, .ObjekttypeDefinisjon-Verdi {
+  float: left
+ }
+
+.ObjekttypeDefinisjon-Tittel {
+  width: 150px;
+  clear: both;
+}
+.ObjekttypeDefinisjon-Verdi {
+  width: 350px;
+}
+
+
+.ObjektType_EgenskapsListe {
+  margin: 1rem;
+  padding: .8rem;
+}
+
+.EgenskapsListe__Egenskaper {
+}
+
+.Egenskap__Tittel {
+  float:left;
+  width: 150px;
+  clear:both;
+  /*border:1px solid #000;*/
+}
+
+.Egenskap__Verdi {
+  width: 400px;
+  margin-left: 150px;
+  /*border:1px solid #000;*/
+}
+
+.FlerverdiAttributtListe dl{
+  margin-left: 75px;
+}
+
+.Egenskap__Verdiliste-Tittel {
+  float: left;
+}
+
+.Egenskap__Verdiliste-Verdi {
+  width: 350px;
+}
+
+
+
+.ObjektType__Relasjoner {
+  margin: 1rem;
+  padding: .8rem;
+}
+
+.ObjektType__Styringsparametre {
+  margin: 1rem;
+  padding: .8rem;
+}
+
+
+
+
 
 .EgenskapsDatatype {
   font-family: monospace;
@@ -65,18 +144,17 @@
 }
 
 .ObjektType [class*="Statistikk"] {
-  color: orange;
+  color: #963019;
   font-weight: bolder;
-  font-style: italic;
   float:right;
+  text-align: right;
 }
 
 .ObjektType [class*="Beskrivelse"] {
-  color: grey;
   font-style: italic;
 }
+
 .ObjektType [class*="Veiledning"] {
-  color: grey;
   font-style: italic;
 }
 

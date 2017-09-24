@@ -11,8 +11,8 @@ class App extends Component {
     return (
       <Router>
       <div className="App">
-        <div className="Header">
-          <h2>Velkommen til datakatalogen light</h2>
+        <div className="HeaderBar">
+          <h1 className="ApplikasjonsOverskrift">Velkommen til datakatalogen light</h1>
         </div>
         <Switch>
           <Route path='/dakatr/:ftid' component={ObjektTypeListe}/>
